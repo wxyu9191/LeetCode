@@ -5,10 +5,11 @@ import java.net.UnknownHostException;
 
 public class Net_test {
     public static void main(String[] args) {
-        System.out.println(Net_test.getHostname());
+        Net_test net_label = new Net_test();
+        System.out.println(net_label.getHostname());
     }
 
-    private static String getHostname(){
+    private String getHostname(){
         String hostname;
         try{
 //             hostname = InetAddress.getLocalHost().getHostName();

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
-
+/*
+* @description: search each sub windows max
+* */
 public class Solution {
 
     public static void main(String[] args) {

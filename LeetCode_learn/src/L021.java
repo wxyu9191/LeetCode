@@ -42,6 +42,10 @@ public class L021 {
         l2.next = new ListNode(3);
         l2.next.next = new ListNode(4);
 
-        mergeTwoLists(l1, l2);
+        ListNode x = mergeTwoLists(l1, l2);
+        while(x != null){
+            System.out.println(x.val);
+            x = x.next;
+        }
     }
 }

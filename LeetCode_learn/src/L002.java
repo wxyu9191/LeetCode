@@ -1,4 +1,7 @@
 public class L002 {
+/*
+* desription: reverse merge two linked 403+323 = 627
+* */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2){
         ListNode l = new ListNode(0);
         ListNode p = l1, q = l2 , cur = l;

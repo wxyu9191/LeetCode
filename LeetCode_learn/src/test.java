@@ -1,5 +1,7 @@
 import java.util.LinkedList;
-
+/*
+ * @description: search each sub windows max
+ * */
 public class test {
 
     public static void main(String[] args) {
