@@ -12,7 +12,7 @@ public class test {
     }
 
     public static int[] getMaxwindow(int[] arr, int w){
-
+    //用栈的思想
         if(arr == null || w < 1 || arr.length ==1)
             return null;
 

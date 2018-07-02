@@ -1,8 +1,10 @@
 
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class Morethanhalfofarray {
+public class
+Morethanhalfofarray {
     public static int MoreThanHalfNum_Solution(int[] array) {
         if (array.length == 0)
             return 0;

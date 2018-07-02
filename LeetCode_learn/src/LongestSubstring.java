@@ -7,6 +7,7 @@ import java.util.*;
  */
 public class LongestSubstring {
 
+    //数组的方式
     public Map<StringBuilder, Integer> LongestSubStringByHashmap(String s){
         if (s == null)
             return null;
@@ -21,7 +22,7 @@ public class LongestSubstring {
         for (int i = 0 ; i < 256 ; i++)//保存每隔字符的位置
             charsIndex[i] = -1;
         for (int index = 0 ; index < strs.length ; index++){
-            char temp = strs[index];
+            char temp = strs[index];//单个字符
             if (charsIndex[temp] > -1 && charsIndex[temp] > startIndex){//repeat
                 startIndex = charsIndex[temp];//将开始位置重置成出现重复元素的位置
             }
@@ -61,13 +62,14 @@ public class LongestSubstring {
     }
 
     public static void main(String[] args) {
-        String s = "jhhjnsfudufbdfyscfbsdjjSAFASFsefyrsjksaudhsduhasdbg" +
-                "ywqep[m,mzaASFASFhuwenzsdjsjfasfyaehwzsjx ;ASFASFlpwisjd" +
-                "asuwnad.pqwekASFqowe92347174nsd sdfsdf73bwASFawue821b9sa" +
-                "dasjdnasdqASFASASFF2en128adasjdnqwudSAASFF ASFw 1wq89ewa" +
-                "dasjdASFhqw8edeqwhedhqwueASFuquweuqwuehqw e123xrkASFajs8" +
-                "9da2qe54we24eDASASAFFdfsdifhsd";
-                //"abcabcdd";
+        String s =
+//                "jhhjnsfudufbdfyscfbsdjjSAFASFsefyrsjksaudhsduhasdbg" +
+//                "ywqep[m,mzaASFASFhuwenzsdjsjfasfyaehwzsjx ;ASFASFlpwisjd" +
+//                "asuwnad.pqwekASFqowe92347174nsd sdfsdf73bwASFawue821b9sa" +
+//                "dasjdnasdqASFASASFF2en128adasjdnqwudSAASFF ASFw 1wq89ewa" +
+//                "dasjdASFhqw8edeqwhedhqwueASFuquweuqwuehqw e123xrkASFajs8" +
+//                "9da2qe54we24eDASASAFFdfsdifhsd";
+                "abcabcdd";
         LongestSubstring test = new LongestSubstring();
         int res = test.lengthOfLongestSubstringByHashmap(s);
         Map<StringBuilder, Integer> map = test.LongestSubStringByHashmap(s);
