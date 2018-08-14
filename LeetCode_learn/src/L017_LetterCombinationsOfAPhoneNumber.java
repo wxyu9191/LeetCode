@@ -53,6 +53,26 @@ public class L017_LetterCombinationsOfAPhoneNumber {
         Queue<StringBuilder> queue = new LinkedList<>();
         queue.add(new StringBuilder());
 
+        for (int i = 0; i < digits.length() ; i++ ) {
+             int limiteSize = queue.size();
+             if (digits.charAt(i) == '0' || digits.charAt(i) == '1') {
+                 continue;
+             }
+
+             int number = digits.charAt(i) - '0';
+             int j = 0 ;
+             while (!queue.isEmpty() && j < limiteSize) {
+                 StringBuilder str = queue.poll();
+                 for (char x: map.get(number).toCharArray()) {
+                     StringBuilder tmp = new StringBuilder(str);
+                     tmp.append(x);
+                     queue.add(tmp);
+                 }
+                 j++;
+             }
+         } 
+
+
         for (int i = 0 ; i < digits.length() ; ++i){
             int limiteSize = queue.size();
             if (digits.charAt(i) == '0' || digits.charAt(i) == '1'){

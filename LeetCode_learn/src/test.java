@@ -1,40 +1,22 @@
-import java.util.LinkedList;
-/*
- * @description: search each sub windows max
- * */
 public class test {
-
-    public static void main(String[] args) {
-        int [] arr = {3,4,6,4,9};
-        arr = getMaxwindow(arr, 3);
-        for (int x : arr)
-            System.out.println(x);
+    public boolean Find(int target, int [][] array) {
+        int row = 0;
+        int col = array[0].length-1;
+        while(row < array.length&&col >= 0){
+            if(target == array[row][col]){
+                return true;
+            }else if(target < array[row][col]){
+                col--;
+            }else{
+                row++;
+            }
+        }
+        return false;
     }
 
-    public static int[] getMaxwindow(int[] arr, int w){
-    //用栈的思想
-        if(arr == null || w < 1 || arr.length ==1)
-            return null;
-
-        LinkedList<Integer> qmax = new LinkedList<Integer>();
-        //result
-        int[] res = new int[arr.length - w + 1];
-        int index = 0;
-        //[3, 2, 6, 4, 9]. 		[6, 6, 9]
-        for(int i = 0 ; i < arr.length ; i ++) {
-            while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[i]) {
-                qmax.pollLast();
-            }
-
-            qmax.addLast(i);//[0,1]
-            if (qmax.peekFirst() == i - w) {
-                qmax.pollFirst();
-            }
-            if(i >= w - 1){
-                res[index++] = arr[qmax.peekFirst()];
-            }
-
-        }
-        return res;
+    public static void main(String[] args) {
+        test t = new test();
+        int [][] arr = {{1, 2, 3}, {4, 5, 6 }, {7, 8, 9}};
+        System.out.println(t.Find(10, arr));
     }
 }
