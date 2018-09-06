@@ -8,7 +8,7 @@ import java.util.Stack;
  * @description:
  */
 
-//  Definition for a binary tree node.
+//  Definition for a binary tree node.中序遍历
 class TreeNode {
     int val;
     TreeNode left;
