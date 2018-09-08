@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package exampledata;
+
+//define a service,and its api
+//分别俩种形式参数和返回参数
+
+service Interview{
+    rpc visit (Span) returns (Transfer){}
+}
+
+message Span{
+    string name = 1;
+}
+
+message Transfer{
+    string message = 1;
+}
